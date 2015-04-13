@@ -1,3 +1,5 @@
-== Ruby on Rails - Labs About How to create a social network
+== Ruby on Rails
 
+
+ Labs About How to create a social network
 
