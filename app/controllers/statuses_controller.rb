@@ -5,6 +5,11 @@ class StatusesController < ApplicationController
   # GET /statuses.json
   def index
     @statuses = Status.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @statuses}
+    end
   end
 
   # GET /statuses/1
@@ -69,6 +74,6 @@ class StatusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
-      params.require(:status).permit(:nombre, :contenido)
+      params.require(:status).permit(:user_id, :contenido)
     end
 end
