@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :statuses
 
+  devise_scope :user do
+      get 'registar',  to:'devise/registrations#new', as: :registrar
+      get 'comenzar',  to:'devise/registrations#new', as: :comenzar
+      get 'destruir',  to:'devise/registrations#destroy', as: :destruir
+  end
+
+  resources :statuses
+  get 'timeline', to: 'statuses#index', as: :timeline 
   root to: 'statuses#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
