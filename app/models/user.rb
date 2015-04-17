@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :nombre_perfil, presence: true,
                            uniqueness: true,
                            format: {
-                              with: /a-zA-Z09_-/,
+                              with: /[a-zA-Z09_-]+/,
                               message: 'Debe estar formateado correctamente.'
                            }
 
